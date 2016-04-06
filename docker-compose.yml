@@ -1,0 +1,13 @@
+version: '2'
+services:
+  grafana:
+    image: graanjonlo/grafana:3.0.0-beta2
+    ports:
+     - "3000:3000"
+    expose:
+     - "3000"
+    volumes:
+     - "/home/andy/docker/data/grafana:/data"
+     - "/home/andy/docker/logs/grafana:/var/logs/grafana"
+    environment:
+     - DOMAIN=my.domain.com

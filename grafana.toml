@@ -1,0 +1,6 @@
+[template]
+src = "config.ini.tmpl"
+dest = "/grafana/conf/custom.ini"
+keys = [
+    "DOMAIN",
+]
