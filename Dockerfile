@@ -7,6 +7,7 @@ RUN chmod +x /usr/local/bin/confd
 
 RUN \
   apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold" && apt-get install -y \
+  git \
   libsqlite3-dev \
   sqlite3 \
   wget
@@ -23,6 +24,11 @@ RUN \
   groupadd grafana && \
   useradd -g grafana grafana && \
   rm -rf /tmp/*
+
+RUN \
+  mkdir -p /grafana/data/plugins && \
+  cd /grafana/data/plugins && \
+  git clone --depth 1 https://github.com/grafana/piechart-panel.git
 
 VOLUME ["/data"]
 VOLUME ["/var/logs/grafana"]

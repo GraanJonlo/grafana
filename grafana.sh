@@ -3,7 +3,6 @@
 /usr/local/bin/confd -onetime -backend env
 
 mkdir -p /grafana/data/log
-mkdir -p /grafana/data/plugins
 
 chown grafana:grafana /data
 chown grafana:grafana /var/logs/grafana
