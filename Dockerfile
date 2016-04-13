@@ -6,15 +6,17 @@ ADD https://github.com/kelseyhightower/confd/releases/download/v0.11.0/confd-0.1
 RUN chmod +x /usr/local/bin/confd
 
 RUN \
-  apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold" && apt-get install -y \
+  apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+
+RUN \
+  apt-get install -y \
   git \
   libsqlite3-dev \
   sqlite3 \
   wget
 
 RUN rm -rf /var/lib/apt/lists/*
-
-ENV GRAFANA_VERSION 3.0.0-beta21459801392
+ENV GRAFANA_VERSION 3.0.0-beta31460467884
 
 RUN \
   cd /tmp && \
