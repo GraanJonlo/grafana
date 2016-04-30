@@ -16,7 +16,7 @@ RUN \
   wget
 
 RUN rm -rf /var/lib/apt/lists/*
-ENV GRAFANA_VERSION 3.0.0-beta51460725904
+ENV GRAFANA_VERSION 3.0.0-beta61461918338
 
 RUN \
   cd /tmp && \
