@@ -5,8 +5,7 @@ MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 ADD https://github.com/kelseyhightower/confd/releases/download/v0.11.0/confd-0.11.0-linux-amd64 /usr/local/bin/confd
 RUN chmod +x /usr/local/bin/confd
 
-RUN \
-  apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
 RUN \
   apt-get install -y \
@@ -16,7 +15,8 @@ RUN \
   wget
 
 RUN rm -rf /var/lib/apt/lists/*
-ENV GRAFANA_VERSION 3.0.0-beta61461918338
+
+ENV GRAFANA_VERSION 3.0.0-beta71462173753
 
 RUN \
   cd /tmp && \
