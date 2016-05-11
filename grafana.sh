@@ -1,5 +1,4 @@
 #!/bin/bash
-
 /usr/local/bin/confd -onetime -backend env
 
 mkdir -p /grafana/data/log

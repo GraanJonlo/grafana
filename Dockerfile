@@ -16,13 +16,13 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV GRAFANA_VERSION 3.0.0-beta71462173753
+ENV GRAFANA_VERSION 3.0.1
 
 RUN \
   cd /tmp && \
-  wget https://grafanarel.s3.amazonaws.com/builds/grafana-$GRAFANA_VERSION.linux-x64.tar.gz && \
-  tar xvzf grafana-$GRAFANA_VERSION.linux-x64.tar.gz && \
-  mv grafana-$GRAFANA_VERSION /grafana && \
+  wget https://grafanarel.s3.amazonaws.com/builds/grafana-$GRAFANA_VERSION-.linux-x64.tar.gz && \
+  tar xvzf grafana-$GRAFANA_VERSION-.linux-x64.tar.gz && \
+  mv grafana-$GRAFANA_VERSION- /grafana && \
   groupadd grafana && \
   useradd -g grafana grafana && \
   rm -rf /tmp/*
@@ -30,7 +30,8 @@ RUN \
 RUN \
   mkdir -p /grafana/data/plugins && \
   cd /grafana/data/plugins && \
-  git clone --depth 1 https://github.com/grafana/piechart-panel.git
+  git clone --depth 1 https://github.com/grafana/piechart-panel.git && \
+  git clone --depth 1 https://github.com/grafana/worldmap-panel.git
 
 VOLUME ["/data"]
 VOLUME ["/var/logs/grafana"]
