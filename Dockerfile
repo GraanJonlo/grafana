@@ -16,13 +16,13 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV GRAFANA_VERSION 3.0.1
+ENV GRAFANA_VERSION 3.0.2-1463383025
 
 RUN \
   cd /tmp && \
-  wget https://grafanarel.s3.amazonaws.com/builds/grafana-$GRAFANA_VERSION-.linux-x64.tar.gz && \
-  tar xvzf grafana-$GRAFANA_VERSION-.linux-x64.tar.gz && \
-  mv grafana-$GRAFANA_VERSION- /grafana && \
+  wget https://grafanarel.s3.amazonaws.com/builds/grafana-$GRAFANA_VERSION.linux-x64.tar.gz && \
+  tar xvzf grafana-$GRAFANA_VERSION.linux-x64.tar.gz && \
+  mv grafana-$GRAFANA_VERSION /grafana && \
   groupadd grafana && \
   useradd -g grafana grafana && \
   rm -rf /tmp/*
