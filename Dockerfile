@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.18
+FROM phusion/baseimage:0.9.19
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 
@@ -16,7 +16,7 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV GRAFANA_VERSION 3.0.4-1464167696
+ENV GRAFANA_VERSION 3.1.0-1468321182
 
 RUN \
   cd /tmp && \
