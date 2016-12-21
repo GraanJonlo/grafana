@@ -16,7 +16,7 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV GRAFANA_VERSION 3.1.1-1470047149
+ENV GRAFANA_VERSION 4.0.1-1480694114
 
 RUN \
   cd /tmp && \

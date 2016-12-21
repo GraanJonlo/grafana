@@ -1,7 +1,7 @@
 version: '2'
 services:
   grafana:
-    image: graanjonlo/grafana:3.1.1
+    image: graanjonlo/grafana:4.0.1
     ports:
      - "3000:3000"
     expose:
